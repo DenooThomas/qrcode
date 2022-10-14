@@ -1,0 +1,205 @@
+@-webkit-keyframes slideOut {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(2);
+  }
+}
+@keyframes slideOut {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(2);
+  }
+}
+section {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: #EDEADE;
+}
+
+.generateBadge {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 350px;
+  min-height: 100vh;
+}
+
+.title {
+  font-family: "Rajdhani", sans-serif;
+  margin-bottom: 10px;
+}
+
+.errorMsg {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  box-sizing: content-box;
+  width: 215px;
+  min-height: 78px;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+.errorMsg.hidden {
+  opacity: 0;
+}
+.errorMsg.shown {
+  opacity: 1;
+}
+
+.errorMsg.shown::before {
+  content: "";
+  display: inline-block;
+  width: 2px;
+  height: 20px;
+  background-color: #343434;
+  margin-right: 20px;
+}
+
+.errorMsg.shown::before {
+  -webkit-animation: slideOut 0.4s ease-in-out forwards;
+          animation: slideOut 0.4s ease-in-out forwards;
+  transform-origin: center;
+}
+
+@keyframes slideOut {
+  0% {
+    transform: scaleY(0);
+  }
+  100% {
+    transform: scaleY(2);
+  }
+}
+.input {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 215px;
+  margin-top: 10px;
+}
+.input form {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.input form label {
+  width: 100%;
+  margin-bottom: 4px;
+  text-align: left;
+}
+.input form .inputfield {
+  width: 100%;
+  padding: 8px 4px;
+  margin-bottom: 15px;
+  border: 1px solid #8c8c8c;
+  border-radius: 5px;
+}
+.input form .inputfield:focus {
+  outline: none;
+}
+.input .button-cont {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  width: calc(100% + 50px);
+}
+.input .button-cont .button {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  line-height: 1;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 18px;
+  border-radius: 5px;
+  width: 100px;
+  height: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.4);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.input .button-cont .button:hover {
+  cursor: pointer;
+  box-shadow: 0 0 rgba(0, 0, 0, 0.4);
+  border-bottom-width: 2px;
+  transform: translateY(2px);
+}
+.input .button-cont .cancel {
+  border-bottom: #c60f36;
+  background-color: #F52955;
+}
+.input .button-cont .create {
+  border-bottom: #179E43;
+  background-color: #19D256;
+}
+.input .button-cont .button:focus {
+  outline: solid 1px #343434;
+}
+
+.output {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+.output .badge {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: content-box;
+  min-width: 200px;
+  height: 115px;
+  padding: 10px;
+  color: #343434;
+  border-radius: 8px;
+}
+.output .badge .information {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 100%;
+  margin-right: 45px;
+}
+.output .badge .information .name {
+  font-size: 1.5em;
+}
+.output .badge .information .name::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  margin-top: 3px;
+  background-color: #343434;
+}
+.output .badge .qrcode {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  padding: 2px;
+}
+.output .badge .hidden {
+  background-color: transparent;
+}/*# sourceMappingURL=GenerateBadge.css.map */

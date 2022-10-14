@@ -1,0 +1,153 @@
+@import "../../partials/flexer";
+@import "../../partials/colors";
+@import "../../partials/animations";
+
+$formWidth: 215px;
+
+section {
+    @include flexRow(nowrap, center, center);
+    width: 100%;
+    background-color: $white;
+}
+
+
+.generateBadge {
+    @include flexColumn(nowrap, center, center);
+    width: 350px; 
+    min-height: 100vh; 
+}
+
+.title {
+    font-family: 'Rajdhani', sans-serif;
+    margin-bottom: 10px;
+}
+
+.errorMsg {
+    @include flexRow(nowrap, flex-start, center);
+    box-sizing: content-box;
+    width: $formWidth;
+    min-height: 78px;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    &.hidden {
+        opacity: 0;
+    }  
+    &.shown {
+        opacity: 1;
+    } 
+}
+.errorMsg.shown::before{
+    content: '';
+    display: inline-block;
+    width: 2px;
+    height: 20px;
+    background-color: $black;
+    margin-right: 20px;
+}
+.errorMsg.shown::before{
+    animation: slideOut 0.4s ease-in-out forwards;
+    transform-origin: center;
+}
+
+
+@include keyframes-slideOut(slideOut);
+
+
+.input {
+    @include flexColumn(nowrap, center, center);
+    width: $formWidth;
+    margin-top: 10px;
+    form {
+        @include flexColumn(nowrap, center, center);
+        width: 100%;
+        label {
+            width: 100%;
+            margin-bottom: 4px;
+            text-align: left;
+        }
+        .inputfield {
+            width: 100%;
+            padding: 8px 4px;
+            margin-bottom: 15px;
+            border: 1px solid $grey;
+            border-radius: 5px;
+        }
+        .inputfield:focus{
+            outline: none;
+        }
+    }
+    .button-cont{
+        @include flexRow(nowrap, space-between, center);
+        margin-top: 10px;
+        width: calc(100% + 50px);
+        .button {
+            @include flexRow(nowrap, center, center);
+            border: none;
+            line-height: 1;
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 18px;
+            border-radius: 5px;
+            width: 100px;
+            height: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.4);
+            user-select: none;
+        }
+        .button:hover{
+            cursor: pointer;
+            box-shadow: 0 0 rgba(0, 0, 0, 0.4);
+            border-bottom-width: 2px;
+            transform: translateY(2px);
+        }
+        .cancel {
+            border-bottom: #c60f36;
+            background-color: #F52955;
+        }
+        .create {
+            border-bottom:#179E43;
+            background-color: #19D256;
+        }
+        .button:focus {
+            outline: solid 1px $black;
+        }
+    }
+}
+
+.output {
+    @include flexRow(nowrap, center, center);
+    margin-top: 50px;
+    .badge {
+        @include flexRow(nowrap, space-between, center);
+        box-sizing: content-box;
+        min-width: 200px;
+        height: 115px;
+        padding: 10px;
+        color: $black;  
+        border-radius: 8px;
+        .information {
+            @include flexColumn(nowrap, space-between, flex-start);
+            height: 100%;
+            margin-right: 45px;
+            .name {
+                font-size: 1.5em;
+            }
+            .name::after{
+                content: '';
+                display: block;
+                width: 40px;
+                height: 2px;
+                margin-top: 3px;
+                background-color: $black;
+            }
+        }
+        .qrcode {
+            @include flexRow(nowrap, center, center);
+            padding: 2px;
+        }
+        .hidden {
+            background-color: transparent;
+        }
+    }
+}

@@ -1,0 +1,19 @@
+@keyframes slideOut {
+    from{
+        transform: scaleY(0);
+    }
+    to{
+        transform: scaleY(2);
+    }
+}
+
+@mixin keyframes-slideOut($name) {
+    @keyframes #{$name} {
+        0%{
+            transform: scaleY(0);
+        }
+        100%{
+            transform: scaleY(2);
+        }
+    }
+  }
