@@ -18,3 +18,8 @@ npm start / npm run build
 
 ## Built with
 - [React JS](https://reactjs.org/)
+
+## To do
+- Add Github Logo
+- QR Code links to Github
+- Animations
